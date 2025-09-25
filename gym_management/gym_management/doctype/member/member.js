@@ -7,6 +7,9 @@ frappe.ui.form.on("Member", {
 		if (!frm.doc.status) {
 			frm.set_value("status", "Active");
 		}
+		if (!frm.doc.__islocal) {
+			addCustomButton(frm);
+		}
 	},
 
 	// When membership_type changes
@@ -23,7 +26,58 @@ frappe.ui.form.on("Member", {
 	date_of_birth(frm) {
 		calculateAge(frm);
 	},
+
+	// Form validation
+	validate(frm) {
+		// Validate Email
+		if (frm.doc.email) {
+			let email_regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			if (!email_regex.test(frm.doc.email)) {
+				frappe.msgprint("Please enter a valid email address.");
+				frappe.validated = false; // Stop form submission
+			}
+		}
+
+		// Validate Phone
+		if (frm.doc.phone) {
+			let phone_regex = /^[0-9]{10}$/; // Example: 10-digit number
+			if (!phone_regex.test(frm.doc.phone)) {
+				frappe.msgprint("Please enter a valid 10-digit phone number.");
+				frappe.validated = false; // Stop form submission
+			}
+		}
+	},
 });
+
+function addCustomButton(frm) {
+	frm.add_custom_button("Assign Trainer", () => {
+		let d = new frappe.ui.Dialog({
+			title: "Assign Trainer",
+			fields: [
+				{
+					fieldname: "trainer",
+					fieldtype: "Link",
+					options: "Trainer",
+					label: "Select Trainer",
+					reqd: 1,
+				},
+			],
+			primary_action_label: "Assign",
+			primary_action(values) {
+				// Set the selected trainer in Member form
+				frm.set_value("assigned_trainer", values.trainer);
+
+				// Save the form
+				frm.save().then(() => {
+					frappe.msgprint(`Trainer ${values.trainer} assigned successfully!`);
+					d.hide(); // Close dialog
+				});
+			},
+		});
+
+		d.show(); // Display the dialog
+	}).addClass("btn-primary");
+}
 
 // Helper function to calculate expiry
 function calculateExpiry(frm) {
@@ -45,6 +99,7 @@ function calculateExpiry(frm) {
 	}
 }
 
+// Helper function to calculate age
 function calculateAge(frm) {
 	if (frm.doc.date_of_birth) {
 		let today = new Date();
@@ -55,5 +110,7 @@ function calculateAge(frm) {
 			age--;
 		}
 		frm.set_value("age", age);
+	} else {
+		frm.set_value("age", null);
 	}
 }

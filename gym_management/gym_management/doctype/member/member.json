@@ -17,10 +17,15 @@
   "age",
   "membership_details_section",
   "membership_type",
+  "membership_name",
   "status",
   "column_break_svtl",
   "joining_date",
-  "expiry_date"
+  "expiry_date",
+  "trainer_details_section",
+  "assigned_trainer",
+  "column_break_zurj",
+  "trainer_name"
  ],
  "fields": [
   {
@@ -105,12 +110,42 @@
   {
    "fieldname": "column_break_hlle",
    "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "membership_type.membership_name",
+   "fieldname": "membership_name",
+   "fieldtype": "Data",
+   "label": "Membership Name",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.assigned_trainer",
+   "fieldname": "trainer_details_section",
+   "fieldtype": "Section Break",
+   "label": "Trainer Details",
+   "read_only": 1
+  },
+  {
+   "fieldname": "assigned_trainer",
+   "fieldtype": "Link",
+   "label": "Assigned Trainer",
+   "options": "Trainer"
+  },
+  {
+   "fetch_from": "assigned_trainer.name1",
+   "fieldname": "trainer_name",
+   "fieldtype": "Data",
+   "label": "Trainer Name"
+  },
+  {
+   "fieldname": "column_break_zurj",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-25 11:07:43.793825",
+ "modified": "2025-09-25 12:29:43.057312",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Member",

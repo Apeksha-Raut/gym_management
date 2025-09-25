@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:TR-{YYYY}-{####}",
  "creation": "2025-09-25 10:54:31.629283",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -35,10 +36,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-09-25 10:55:35.408127",
+ "modified": "2025-09-25 13:18:54.109703",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Trainer",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -57,5 +59,6 @@
  "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "name1"
 }
