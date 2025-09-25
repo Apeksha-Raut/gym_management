@@ -1,0 +1,45 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"bSU6P_nJFK\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Gym Management</span>\",\"col\":12}},{\"id\":\"LxCs-T9JPz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Total Members\",\"col\":3}},{\"id\":\"ke9e339tbl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Active Members\",\"col\":3}},{\"id\":\"mg2fbsE0ti\",\"type\":\"spacer\",\"data\":{\"col\":12}}]",
+ "creation": "2025-09-25 13:46:51.667589",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Gym Management",
+ "links": [],
+ "modified": "2025-09-25 15:53:49.376892",
+ "modified_by": "Administrator",
+ "module": "Gym Management",
+ "name": "Gym Management",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 92.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Total Members",
+   "link_to": "Member",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Active Members",
+   "link_to": "Member",
+   "stats_filter": "[[\"Member\",\"status\",\"=\",\"Active\",false]]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Gym Management"
+}
