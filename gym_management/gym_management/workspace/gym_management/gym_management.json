@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"bSU6P_nJFK\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Gym Management</span>\",\"col\":12}},{\"id\":\"LxCs-T9JPz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Total Members\",\"col\":3}},{\"id\":\"ke9e339tbl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Active Members\",\"col\":3}},{\"id\":\"mg2fbsE0ti\",\"type\":\"spacer\",\"data\":{\"col\":12}}]",
+ "content": "[{\"id\":\"bSU6P_nJFK\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Gym Management</span>\",\"col\":12}},{\"id\":\"pk-8CZYWrO\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Add Member\",\"col\":3}},{\"id\":\"LxCs-T9JPz\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Total Members\",\"col\":3}},{\"id\":\"ke9e339tbl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Active Members\",\"col\":3}},{\"id\":\"mg2fbsE0ti\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"u1P6Fp9P-J\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Attendance Log Report\",\"col\":3}}]",
  "creation": "2025-09-25 13:46:51.667589",
  "custom_blocks": [],
  "docstatus": 0,
@@ -12,7 +12,7 @@
  "is_hidden": 0,
  "label": "Gym Management",
  "links": [],
- "modified": "2025-09-25 15:53:49.376892",
+ "modified": "2025-09-25 17:55:35.125724",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Management",
@@ -24,6 +24,22 @@
  "roles": [],
  "sequence_id": 92.0,
  "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Attendance Log Report",
+   "link_to": "Attendance Report",
+   "report_ref_doctype": "Attendance Log",
+   "type": "Report"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "New",
+   "label": "Add Member",
+   "link_to": "Member",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
   {
    "color": "Grey",
    "doc_view": "List",
